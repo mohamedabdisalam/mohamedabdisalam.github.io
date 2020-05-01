@@ -7,7 +7,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    background-color: white;
+    background-color: whitesmoke;
     color: #5f5f79;
 }
 
@@ -27,10 +27,12 @@ header {
     font-size: 30px;
     flex: 1;
 }
+
 .logo {
     font-weight: 400;
     margin: 5px;
 }
+
 nav {
     flex: 1;
     display: flex;
@@ -46,7 +48,7 @@ nav {
 }
 
 .nav-link {
-    color: #5f5f79;
+    color: inherit;
     font-size: 18px;
     text-decoration: none;
     letter-spacing: 2px;
@@ -145,7 +147,7 @@ nav {
     .presentation, .about {
         flex-direction: column;
     }
-    .introduction, .why, .carousel {
+    .introduction, .why, .carousel .carousel-container, .carousel-slide{
         margin-top: 5vh;
         text-align: center;
     }

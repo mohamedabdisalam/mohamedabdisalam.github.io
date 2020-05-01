@@ -1,7 +1,7 @@
 //Dark mode
 function myDarkMode() {
     let element = document.body;
-    element.classList.toggle("dark-mode")
+    element.classList.toggle("dark-mode");
 }
 
 //Carousel
@@ -16,10 +16,37 @@ const nextBtn = document.querySelector('#nextBtn');
 //Counter
 
 let counter = 1;
-const size = carouselImages[0].clientWidth;
+
+let size = carouselImages[0].offsetWidth;
 
  carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';      
 
+ //Play/Pause feature
+let playing = true;
+let pauseButton = document.getElementById('pause');
+
+function pauseSlideshow(){
+	pauseButton.innerHTML = 'Play';
+	playing = false;
+	clearInterval(slideInterval);
+}
+
+function playSlideshow(){
+	pauseButton.innerHTML = 'Pause';
+	playing = true;
+	slideInterval = setInterval(nextSlide,2000);
+}
+
+pauseButton.onclick = function(){
+	if(playing){ pauseSlideshow(); }
+	else{ playSlideshow(); }
+};
+
+//Loop feature
+let toggleCarousel = true;
+
+
+ 
  //Button listeners
 
 nextBtn.addEventListener('click', () => {
@@ -35,6 +62,8 @@ prevBtn.addEventListener('click', () => {
     counter--;
     carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
 });
+
+
 
 carouselSlide.addEventListener('transitionend', () => {
     if (carouselImages[counter].id === 'lastClone') {
