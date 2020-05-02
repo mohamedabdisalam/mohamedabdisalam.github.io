@@ -4,13 +4,14 @@ body {
     background-color: whitesmoke;
     color: #5f5f79;
 }
-*{
+
+* {
     padding: 0px;
-    margin: 0px;  
+    margin: 0px;
     box-sizing: border-box;
 }
 
-main{
+main {
     margin: 0 20px;
 }
 
@@ -20,7 +21,9 @@ header {
     align-items: center;
 }
 
-.logo-container, .darker-mode, .social-media{
+.logo-container,
+.darker-mode,
+.social-media {
     display: flex;
 }
 
@@ -66,26 +69,30 @@ nav {
     align-items: center;
 }
 
-.introduction, .why {
+.introduction,
+.why {
     flex: 1;
 }
-.intro-text h1{
+
+.intro-text h1 {
     color: inherit;
     font-size: 44px;
     font-weight: 500;
 }
 
-.intro-text p{
+.intro-text p {
     margin: 5px;
     font-size: 22px;
 }
+
 .cover {
     flex: 1;
     display: flex;
-    justify-content: center;height: 60vh;
+    justify-content: center;
+    height: 60vh;
 }
 
-.cover img{
+.cover img {
     height: 100%;
     filter: drop-shadow(0px 5px 3px black);
     border-radius: 50px;
@@ -98,15 +105,15 @@ nav {
     align-items: center;
 }
 
-.why-text h2{
+.why-text h2 {
     color: inherit;
     font-size: 33px;
     font-weight: 500;
 }
 
-.why-text p{
-        margin: 5px;
-        font-size: 20px;
+.why-text p {
+    margin: 5px;
+    font-size: 20px;
 }
 
 .footer {
@@ -134,11 +141,11 @@ nav {
 }
 
 .dark-mode {
-    background-color:black;
+    background-color: black;
     color: whitesmoke;
 }
 
-.carousel{
+.carousel {
     width: auto;
 }
 
@@ -146,9 +153,20 @@ nav {
     display: flex;
     justify-content: center;
     align-content: center;
+
+
+
 }
 
-.mySlides{
+.d-none {
+    display: none;
+}
+
+.d-block {
+    display: block;
+}
+
+.mySlides {
     width: 100%;
     height: auto;
 }
@@ -174,26 +192,35 @@ nav {
 }
 
 @media screen and (max-width: 1024px) {
-    .presentation, .about {
+
+    .presentation,
+    .about {
         flex-direction: column;
     }
-    .introduction, .why {
+
+    .introduction,
+    .why {
         margin-top: 5vh;
         text-align: center;
     }
-    .intro-text h1{
+
+    .intro-text h1 {
         font-size: 25px;
     }
-    .intro-text p{
+
+    .intro-text p {
         font-size: 18px;
     }
-    .why-text h2{
+
+    .why-text h2 {
         font-size: 20px;
     }
-    .why-text p{
+
+    .why-text p {
         font-size: 15px;
     }
-    .cover img{
+
+    .cover img {
         height: 80%;
     }
 }
