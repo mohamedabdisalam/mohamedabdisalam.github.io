@@ -22,7 +22,6 @@ header {
 }
 
 .logo-container,
-.darker-mode,
 .social-media {
     display: flex;
 }
@@ -44,21 +43,22 @@ nav {
 }
 
 .nav-links {
-    flex: 10;
-    display: flex;
-    justify-content: flex-end;
     list-style: none;
-    justify-content: space-evenly;
+    display: flex;
+    flex: 10;
+    justify-content: flex-end;
 }
 
 .nav-link {
-    color: inherit;
-    font-size: 18px;
     text-decoration: none;
+    color: inherit;
+    margin-right: 30px;
+    font-size: 18px;
     letter-spacing: 2px;
 }
 
 .darker-mode {
+    text-decoration: none;
     flex: 1;
     justify-content: flex-end;
 }
@@ -135,9 +135,17 @@ nav {
     text-decoration: none;
 }
 
+.darker-mode button {
+    background: inherit;
+    border: 0;
+    outline: none;
+    text-decoration: none;
+}
+
 #darkBtn {
     color: #5f5f79;
     font-size: 20px;
+    text-decoration: none;
 }
 
 .dark-mode {
@@ -150,9 +158,10 @@ nav {
 }
 
 .carousel-container {
-    display: flex;
+    display: inline-block;
     justify-content: center;
     align-content: center;
+    max-width: 800px;
 }
 
 .d-none {
@@ -168,25 +177,25 @@ nav {
     height: auto;
 }
 
-#prevBtn {
-    position: absolute;
-    top: 50%;
-    z-index: 10;
-    left: 5%;
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
+#prevButton, #nextButton, #playButton {
+    color: #5f5f79;
+    font-family: 'Poppins', sans-serif;
+    padding: 6px;
+    font-size: 16px;
+    border-radius: 12px;
+    /* border: black; */
+    display: inline-block; 
+    /* background-color: whitesmoke; */
+    text-decoration: none;
 }
 
-#nextBtn {
-    position: absolute;
-    top: 50%;
-    z-index: 10;
-    right: 5%;
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
+.button button{
+    border: none;
+    outline: none;
 }
+
+
+
 
 @media screen and (max-width: 1024px) {
 
