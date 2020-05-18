@@ -1,14 +1,10 @@
 //Dark mode
 function myDarkMode() {
-    let element = document.body;
-    element.classList.toggle("dark-mode");
+    const body = document.body;
+    body.classList.toggle("dark-mode");
 }
 
-//Carousel
-// const carouselSlide = document.querySelector('.carousel-slide');
-// const carouselImages = document.querySelectorAll('.carousel-slide img');
-
-const playButton = document.querySelector("#playButton");
+const playPauseButton = document.querySelector("#playPauseButton");
 const mySlides = document.getElementsByClassName("mySlides");
 
 // carousel next button
@@ -16,7 +12,7 @@ nextButton.addEventListener("click", nextSlide);
 prevButton.addEventListener("click", prevSlide);
 
 // //Auto slide
-let myIndex = 0;
+let currentIndex = 0; //minimum = 0, max = 2
 let timerId = null;
 
 function carousel() {
@@ -24,24 +20,24 @@ function carousel() {
     for (let i = 0; i < mySlides.length; i++) {
         mySlides[i].className = "mySlides d-none";
     }
-    myIndex++;
-    if (myIndex >= mySlides.length) {
-        myIndex = 0;
+    currentIndex++;
+    if (currentIndex >= mySlides.length) {
+        currentIndex = 0;
     }
     // make current slide visible
-    mySlides[myIndex].className = "mySlides d-block";
+    mySlides[currentIndex].className = "mySlides d-block";
 }
 
-// carousel play button
-playButton.addEventListener("click", () => {
+// carousel playPause button
+playPauseButton.addEventListener("click", () => {
     // check if the carousel is running
-    if (timerId) {
+    if (timerId) { //pause carousel
         window.clearInterval(timerId);
         timerId = null;
-        playButton.innerText = "Play";
-    } else {
+        playPauseButton.innerText = "Play";
+    } else { //play carousel
         timerId = window.setInterval(carousel, 2000);
-        playButton.innerText = "Pause";
+        playPauseButton.innerText = "Pause";
     }
 });
 
@@ -49,30 +45,30 @@ playButton.addEventListener("click", () => {
 
 function nextSlide() {
     // hide current image
-    mySlides[myIndex].className = "mySlides d-none";
+    mySlides[currentIndex].className = "mySlides d-none";
     // go to next image
-    myIndex++;
-    // check if current index is > array
-    if (myIndex >= mySlides.length) {
+    currentIndex++;
+    // check if current index is >= array length (3)
+    if (currentIndex >= mySlides.length) {
         // reset array index to 0
-        myIndex = 0;
+        currentIndex = 0;
     } 
     // show current image
-    mySlides[myIndex].className = "mySlides d-block";
+    mySlides[currentIndex].className = "mySlides d-block";
 };
 
 function prevSlide() {
     // hide current image
-    mySlides[myIndex].className = "mySlides d-none";
+    mySlides[currentIndex].className = "mySlides d-none";
     // go to next image
-    myIndex--;
+    currentIndex--;
     // check if current index is < 0
-    if (myIndex < 0) {
+    if (currentIndex < 0) {
         // set the index to the end of the array
-        myIndex = 2;
+        currentIndex = 2;
     } 
     // show current image
-    mySlides[myIndex].className = "mySlides d-block";
+    mySlides[currentIndex].className = "mySlides d-block";
 }
 
 //Keyboard navigation

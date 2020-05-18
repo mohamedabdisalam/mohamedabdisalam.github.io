@@ -177,7 +177,7 @@ nav {
     height: auto;
 }
 
-#prevButton, #nextButton, #playButton {
+#prevButton, #nextButton, #playPauseButton {
     color: #5f5f79;
     font-family: 'Poppins', sans-serif;
     padding: 6px;
